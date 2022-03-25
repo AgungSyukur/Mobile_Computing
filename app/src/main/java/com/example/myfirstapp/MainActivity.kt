@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     }
     setContentView(R.layout.activity_main);
     LinearLayout linearlayout_name = (LinearLayout)findViewById(R.id.LinearLayout);
-    EditText edittext_name = new EditText(this);
-    edittext_name.setHint(“Username”);
-    linearLayout.addView(edittext_name);
+    Button button_name = new Button(this);
+    button_name.setHint(“Log In”);
+    linearLayout.addView(button_name);
 }
