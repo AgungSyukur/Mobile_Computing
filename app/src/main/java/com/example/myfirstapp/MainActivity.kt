@@ -1,26 +1,16 @@
-import android.R.layout.simple_list_item_1
+package com.example.myapplication
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.GridView
-import android.widget.Toast
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(res.layout.activity_main)
-        val gridView = findViewById<GridView>(res.id.gridView) as GridView
-        var arrayList = ArrayList<Int>()
-        var i = 0
-        while (i <= 20) {
-            arrayList.add(i)
-            i++
-        }
-        val myAdapter: ArrayAdapter<Int> = ArrayAdapter(this@MainActivity,
-            simple_list_item_1, arrayList)
-        gridView.adapter = myAdapter
-        gridView.setOnItemClickListener { adapterView, view, position, id ->
-            Toast.makeText(this@MainActivity, "You have Click " +
-                    arrayList.get(position), Toast.LENGTH_LONG).show()
-        }
+        setContentView(R.layout.activity_main)
     }
+    setContentView(R.layout.activity_main);
+    LinearLayout linearlayout_name = (LinearLayout)findViewById(R.id.LinearLayout);
+    TextView textview_name = new TextView(this);
+    textveiw_name.setText(“Hello I am Text View”);
+    linearLayout.addView(textview_name);
 }
