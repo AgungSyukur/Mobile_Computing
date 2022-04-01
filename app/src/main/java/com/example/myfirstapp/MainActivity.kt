@@ -1,16 +1,19 @@
-package com.example.myapplication
-
+package com.example.sampleuicontrol
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
+import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
+    val id:Int = 10
+    val language:String = "kotlin"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        button.setOnClickListener() {
+            intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("id_value", id)
+            intent.putExtra("language_value", language)
+            startActivity(intent)
+        }
     }
-    setContentView(R.layout.activity_main);
-    LinearLayout linearlayout_name = (LinearLayout)findViewById(R.id.LinearLayout);
-    Button button_name = new Button(this);
-    button_name.setHint(“Log In”);
-    linearLayout.addView(button_name);
 }
